@@ -12,27 +12,7 @@ class ContentRowMovies extends Component {
   }
 
 
-  async componentDidMount() {
-    try {
-      const apiMovies = await fetch('/api/movies')
-      const dataMovies = await apiMovies.json();
-
-      const apiActors = await fetch('/api/actors')
-      const dataActors = await apiActors.json()
-
-      const totalAwards = dataMovies.data.map((movie) => movie.awards).reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-
-      this.setState({
-        totalMovies: dataMovies.data.length,
-        totalAwards: totalAwards,
-        actorsQuantity: dataActors.data.length
-      })
-
-    } catch (e) {
-      console.error(e)
-    }
-  }
-
+  
   
   render() {
     return (

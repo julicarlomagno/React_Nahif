@@ -12,9 +12,11 @@ export default function GenresInDb({categories})  {
                   </div>
                   <div className="card-body fondoCaja">
                     <div className="row ">
-                      { categories.map( (category, i) => (
-                          <Genre key = {category + i} name = {category} />
-                      ))}
+                      { categories.map( (category, i) => {
+                          {console.log(category)}
+                          return <Genre key = {category + i} name = {category} />
+                      })}
+              
                     </div>
                   </div>
             </div>

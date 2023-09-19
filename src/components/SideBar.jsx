@@ -79,24 +79,24 @@ export default function SideBar(props) {
 
       
       <Routes>
-            <Route path ='/'  exact element={<ContentWrapper 
+            <Route path ='/'  exact={true} element={<ContentWrapper 
                                                             productInfo = {productInfo} 
                                                             userInfo = {userInfo}/>} />
 
-            <Route path ='/categorias' exact  element={<GenresInDb 
+            <Route path ='/categorias' exact={true}  element={<GenresInDb 
                                                             categories = {Object.keys(productInfo.countByCategory)}/>} />
                                                             
-            <Route path ='/lastUser' exact   element={LastMovieInDb} />
-            <Route path ='/stats' exact   element={ContentRowMovies} />
+            <Route path ='/lastUser' exact={true}   element={LastMovieInDb} />
+            <Route path ='/stats' exact={true}   element={ContentRowMovies} />
 
-            <Route path ='/tableUser' exact  element={<MoviesTable 
+            <Route path ='/tableUser' exact={true}  element={<MoviesTable 
                                                             data = {userInfo.users} 
                                                             header = {['id', 'name', 'email', 'detail']}/>} />
-            <Route path ='/tableProduct' exact   element={<MoviesTable 
+            <Route path ='/tableProduct' exact={true}   element={<MoviesTable 
                                                             data = {productInfo.products} 
                                                             header = {['id', 'name', 'description', 'detail', 'category']}/>} />
 
-            <Route path ='/searchmovies' exact  element={SearchMovies} />
+            <Route path ='/searchmovies' exact={true}  element={SearchMovies} />
             <Route element={NotFound} />                          
       </Routes>
 
@@ -108,7 +108,7 @@ export default function SideBar(props) {
 
 // PROP TYPES
 
-SideBar.propTypes = {
+/*SideBar.propTypes = {
       sideBar: PropTypes.arrayOf(
         PropTypes.shape({
           id: PropTypes.string.isRequired,
@@ -124,6 +124,6 @@ SideBar.defaultProps = {
           title: "Default",
         },
       ],
-    };
+    };*/
 
 
