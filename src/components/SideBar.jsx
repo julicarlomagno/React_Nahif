@@ -92,7 +92,7 @@ export default function SideBar(props) {
             <Route path ='/tableUser' exact={true}  element={<MoviesTable 
                                                             data = {userInfo.users} 
                                                             header = {['id', 'name', 'email', 'detail']}/>} />
-            <Route path ='/tableProduct' exact={true}   element={<MoviesTable 
+            <Route path ='/tableProducts' exact={true}   element={<MoviesTable 
                                                             data = {productInfo.products} 
                                                             header = {['id', 'name', 'description', 'detail', 'category']}/>} />
 

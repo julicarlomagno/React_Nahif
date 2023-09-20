@@ -1,41 +1,23 @@
 import React, { Component }  from 'react';
 import { Cards } from './index'
 
-class ContentRowMovies extends Component {
-  constructor(props){
-    super(props);
-      this.state = {
-        totalMovies: [],
-        totalAwards: [],
-        actorsQuantity: []
-      }
-  }
-
-
-  
-  
-  render() {
+export default function ContentRowMovies ({userInfo, productInfo, cantCategorias}) {
     return (
       <div className='row'>
               <Cards 
-                title = "Movies in Data Base"
-                quantity = {this.state.totalMovies}
-                color = "primary"
-                icon = "fa-film" />
+                title = "Total de Productos"
+                quantity = {productInfo}
+                color = "primary" />
               <Cards 
-                title = "Total awards"
-                quantity = {this.state.totalAwards}
-                color = "success"
-                icon = "fa-award" />
+                title = "Total de Usuarios"
+                quantity = {userInfo}
+                color = "success"/>
               <Cards 
-                title = "Actors quantity"
-                quantity = {this.state.actorsQuantity}
+                title = "Cantidad de Categorias"
+                quantity = {cantCategorias}
                 color = "warning"
-                icon = "fa-user" />
+/>
       </div>
 
     )
   }
-}
-
-export default ContentRowMovies
