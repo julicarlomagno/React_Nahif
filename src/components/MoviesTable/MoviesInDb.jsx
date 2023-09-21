@@ -3,8 +3,7 @@ import './moviesTable.css'
 // import PropTypes from 'prop-types'
 
 export default function MoviesInDb({data, header}) {
-  {console.log(data);}
-  {console.log(header);}
+  
   return (
 
         <ul className='moviesTableGridRows'>

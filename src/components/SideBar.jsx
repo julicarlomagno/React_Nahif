@@ -1,7 +1,7 @@
 import React from 'react';
-import image from '../assets/images/logo-DH.png'
+import image from '../assets/images/LOGO-01.png'
 import PropTypes from 'prop-types'
-import { ContentWrapper, GenresInDb, LastMovieInDb, ContentRowMovies, MoviesTable , SearchMovies, NotFound } from './index'
+import { ContentWrapper, GenresInDb, LastMovieInDb, MoviesTable , LastUser, NotFound } from './index'
 import { Link, Route, Routes } from 'react-router-dom'
 
 import { useState, useEffect } from 'react'
@@ -39,16 +39,17 @@ export default function SideBar(props) {
             await Promise.all([fetchData('/api/user', setUserInfo), fetchData('/api/product', setProductInfo)])
             }
             data()
-
+{console.log(userInfo)}
+                        {console.log(productInfo)}
       }, [])
 
 
   return (
     <>  
       <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
-                        <Link exact className="sidebar-brand d-flex align-items-center justify-content-center" to="/">
+                        <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/">
                               <div className="sidebar-brand-icon">
-                                    <img className="w-100" src={image} alt="Digital House" />
+                                    <img className="w-100" src={image} alt="Nahif" />
                               </div>
                         </Link>
 
@@ -75,29 +76,32 @@ export default function SideBar(props) {
             <hr className="sidebar-divider d-none d-md-block" />
       </ul>
 
-
+                        
 
       
       <Routes>
-            <Route path ='/'  exact={true} element={<ContentWrapper 
+            <Route path ='/'  exact element={<ContentWrapper 
+       
                                                             productInfo = {productInfo} 
-                                                            userInfo = {userInfo}/>} />
+                                                            userInfo = {userInfo}
+                                                            />} />
 
-            <Route path ='/categorias' exact={true}  element={<GenresInDb 
-                                                            categories = {Object.keys(productInfo.countByCategory)}/>} />
+            <Route path ='/categorias' exact  element={<GenresInDb 
+                                                            categories = {Object.keys(productInfo.countByCategory)}
+                                                            countByCategory={productInfo.countByCategory}
+                                                            />} />
                                                             
-            <Route path ='/lastUser' exact={true}   element={LastMovieInDb} />
-            <Route path ='/stats' exact={true}   element={ContentRowMovies} />
+            <Route path ='/lastProduct' exact   element={<LastMovieInDb lastProduct={productInfo.lastProduct}/>} />
+            <Route path ='/lastUser' exact   element={<LastUser lastUser={userInfo.lastUser}/>} />
 
-            <Route path ='/tableUser' exact={true}  element={<MoviesTable 
+            <Route path ='/tableUser' exact  element={<MoviesTable 
                                                             data = {userInfo.users} 
                                                             header = {['id', 'name', 'email', 'detail']}/>} />
-            <Route path ='/tableProducts' exact={true}   element={<MoviesTable 
+            <Route path ='/tableProducts' exact   element={<MoviesTable 
                                                             data = {productInfo.products} 
                                                             header = {['id', 'name', 'description', 'detail', 'category']}/>} />
 
-            <Route path ='/searchmovies' exact={true}  element={SearchMovies} />
-            <Route element={NotFound} />                          
+            <Route element={<NotFound/>} />                          
       </Routes>
 
     </>
@@ -108,7 +112,7 @@ export default function SideBar(props) {
 
 // PROP TYPES
 
-/*SideBar.propTypes = {
+SideBar.propTypes = {
       sideBar: PropTypes.arrayOf(
         PropTypes.shape({
           id: PropTypes.string.isRequired,
@@ -124,6 +128,6 @@ SideBar.defaultProps = {
           title: "Default",
         },
       ],
-    };*/
+    };
 
 
