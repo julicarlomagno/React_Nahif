@@ -89,8 +89,8 @@ export default function SideBar(props) {
                                                             countByCategory={productInfo.countByCategory}
                                                             />} />
                                                             
-            <Route path ='/lastProduct' exact   element={<LastMovieInDb lastProduct={productInfo.lastProduct}/>} />
-            <Route path ='/lastUser' exact   element={<LastUser lastUser={userInfo.lastUser}/>} />
+            <Route path ='/lastProduct' exact   element={<LastMovieInDb lastProduct={productInfo}/>} />
+            <Route path ='/lastUser' exact   element={<LastUser lastUser={userInfo}/>} />
 
             <Route path ='/tableUser' exact  element={<MoviesTable 
                                                             data = {userInfo.users} 

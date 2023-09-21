@@ -1,16 +1,16 @@
 import React from 'react';
 
 
-export default function LastMovieInDb(lastProduct) {
-      {console.log("lastprod " +lastProduct)}
+export default function LastMovieInDb(productInfo) {
+      {console.log("lastprod " +productInfo.lastProduct)}
      
-      if(lastProduct ===undefined){
+      if(productInfo.lastProduct ===undefined){
             return(
                   <h3>Cargando</h3>
             )
       }
       
-      let imagen = lastProduct.imagen
+      let imagen = productInfo.lastProduct.imagen
       let rutaImagen = "/public/img/"+imagen
       return(
       
@@ -21,13 +21,13 @@ export default function LastMovieInDb(lastProduct) {
                   </div>
                   <div className="card-body">
                               <div>
-                                    <p>id:{lastProduct.id}</p>
-                                    <p>name:{lastProduct.name}</p>
-                                    <p>descripción: {lastProduct.description}</p>
-                                    <p>detail: {lastProduct.detail}</p>
+                                    <p>id:{productInfo.lastProduct.id}</p>
+                                    <p>name:{productInfo.lastProduct.name}</p>
+                                    <p>descripción: {productInfo.lastProduct.description}</p>
+                                    <p>detail: {productInfo.lastProduct.detail}</p>
                               </div>
                             <div className="text-center">
-                              <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "40rem" }} src={rutaImagen} alt={lastProduct.name} />
+                              <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "40rem" }} src={rutaImagen} alt={productInfo.lastProduct.name} />
                             </div>
                   </div>
             </div>
