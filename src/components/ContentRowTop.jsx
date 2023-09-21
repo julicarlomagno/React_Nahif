@@ -14,6 +14,8 @@ export default function ContentRowTop({categories, userInfo, productInfo}) {
                   />
                 
           <div className="row">
+              {console.log("prodinfo.lastprod"+productInfo.lastProduct)}
+              {console.log("userinfo.last"+userInfo.lastUser)}
                  <LastMovieInDb lastProduct={productInfo.lastProduct}/>
                  <LastUser lastUser={userInfo.lastUser}/>
                  <GenresInDb categories = {categories} countByCategory={productInfo.countByCategory}/>

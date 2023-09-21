@@ -1,10 +1,10 @@
 import React from 'react';
 
 
-export default function LastMovieInDb(lastUser) {
-      {console.log(lastUser)}
+export default function LastUser(lastUser) {
+      {console.log("lastuser "+lastUser)}
      
-      if(!lastUser){
+      if(lastUser ===undefined){
             return(
                   <h3>Cargando</h3>
             )
@@ -16,7 +16,7 @@ export default function LastMovieInDb(lastUser) {
         <div className="col-lg-6 mb-4">
             <div className="card shadow mb-4">
                   <div className="card-header py-3">
-                            <h5 className="m-0 font-weight-bold text-gray-800">Last in Data Base</h5>
+                            <h5 className="m-0 font-weight-bold text-gray-800">Last User</h5>
                   </div>
                   <div className="card-body">
                               <div>

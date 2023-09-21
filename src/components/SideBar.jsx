@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/images/LOGO-01.png'
+import image from '../assets/images/Nahif.Png'
 import PropTypes from 'prop-types'
 import { ContentWrapper, GenresInDb, LastMovieInDb, MoviesTable , LastUser, NotFound } from './index'
 import { Link, Route, Routes } from 'react-router-dom'
@@ -39,8 +39,6 @@ export default function SideBar(props) {
             await Promise.all([fetchData('/api/user', setUserInfo), fetchData('/api/product', setProductInfo)])
             }
             data()
-{console.log(userInfo)}
-                        {console.log(productInfo)}
       }, [])
 
 

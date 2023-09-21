@@ -13,7 +13,6 @@ export default function GenresInDb({categories, countByCategory})  {
                   <div className="card-body fondoCaja">
                     <div className="row ">
                       { categories.map( (category, i) => {
-                        console.log(countByCategory[category])
                           return <Genre key = {category + i} 
                                                 name = {category} 
                                                 cantidad={countByCategory[category]} />
