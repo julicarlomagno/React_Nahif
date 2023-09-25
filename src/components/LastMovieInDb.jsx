@@ -1,8 +1,7 @@
 import React from 'react';
-
+import './lastUserProd.css'
 
 export default function LastMovieInDb(productInfo) {
-      {console.log("lastprod " +productInfo.lastProduct)}
      
       if(productInfo.lastProduct ===undefined){
             return(
@@ -11,7 +10,7 @@ export default function LastMovieInDb(productInfo) {
       }
       
       let imagen = productInfo.lastProduct.imagen
-      let rutaImagen = "/public/img/"+imagen
+      let rutaImagen = "/img/"+imagen
       return(
       
         <div className="col-lg-6 mb-4">
@@ -27,7 +26,7 @@ export default function LastMovieInDb(productInfo) {
                                     <p>detail: {productInfo.lastProduct.detail}</p>
                               </div>
                             <div className="text-center">
-                              <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "40rem" }} src={rutaImagen} alt={productInfo.lastProduct.name} />
+                              <img className="imgLast" style={{ width: "40rem" }} src={rutaImagen} alt={productInfo.lastProduct.name} />
                             </div>
                   </div>
             </div>
